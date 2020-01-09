@@ -1,0 +1,35 @@
+{
+  "invoiceNumber": "100",
+  "issuedData": "01/07/2020",
+  "dueData": "01/31/2020",
+  "invoiceName": "Sample Invoice",
+  "companyInfo": {
+    "name": "",
+    "address": "",
+    "email": "",
+    "phone": "",
+  },
+  "clientId": "abcdefgh",
+  "invoiceItems": [
+    {
+      "itemName": "",
+      "cost": "",
+      "quantity": ""
+    },
+    {
+      "itemName": "",
+      "cost": "",
+      "quantity": ""
+    },
+    {
+      "itemName": "",
+      "cost": "",
+      "quantity": ""
+    }
+  ],
+  "settings": {
+    "currency": "",
+    "taxPercentage": "",
+    "discount": ""
+  }
+}

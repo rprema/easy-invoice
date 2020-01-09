@@ -1,0 +1,28 @@
+.sidebar-nav__items {
+  list-style: none;
+  background-color: #2f365f;
+  display: block;
+  border: 0 solid #dae1e7;
+  line-height: 1;
+
+  .sidebar-nav__item {
+    display: flex;
+
+    a {
+      width: 100%;
+      padding: 16px 2rem;
+      color: #b2b7ff;
+      text-decoration: none;
+
+      &.active,
+      &:hover,
+      &:active {
+        color: #fff;
+        cursor: pointer;
+      }
+
+    }
+
+  }
+
+}

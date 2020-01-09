@@ -1,0 +1,45 @@
+.invoice__form--settings-send-button{
+  padding: 8px 24px;
+  font-size: 14px;
+  background-color: #5b5ef7;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px 0px rgba(100,100,100,0.5);
+  color: #FFFFFF;
+  font-weight:500;
+  cursor: pointer;
+}
+.invoice__form--settings-double{
+  padding: 16px;
+
+}
+.invoice__form--settings-double-preview{
+  text-decoration: none;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  line-height:1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: #fff;
+  color:#212121;
+  border: 1px solid #777;
+  border-radius: 4px;
+
+
+}
+
+.invoice__form--settings-currency{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  max-width:40px;
+  border-bottom: 1px solid #F2F2F2;
+
+  .invoice__form--settings-currency-name{
+    font-size: 16px;
+
+  }
+ .invoice__form--settings-currency-input{
+   border-radius: 4px;
+   border: 1px solid #777;
+   line-height: 1.5rem;
+ }
+}

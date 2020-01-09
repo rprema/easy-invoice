@@ -1,0 +1,125 @@
+<div class="container">
+  <!--  <div class="main-header">Header-->
+  <!--  </div>-->
+
+  <app-menu></app-menu>
+
+  <main class="main-container">
+    <app-header></app-header>
+    <form (ngSubmit)="onSubmitForm(invoiceForm)" #invoiceForm="ngForm">
+      <button type="submit" class="invoice__button">Save</button>
+
+      <div class="main__invoice">
+        <div class="main__invoice--header">
+          <div class="main__invoice--header-item">
+            <label class="main__invoice--header-item-label">Invoice # </label>
+            <input class="main__invoice--header-item-input" type="text" name="invoiceNumber"
+                   [(ngModel)]="invoiceData.invoiceNumber">
+          </div>
+          <div class="main__invoice--header-item">
+            <label class="main__invoice--header-item-label">Date Issued: </label>
+            <input class="main__invoice--header-item-input" type="text" name="dateIssued" [(ngModel)]="invoiceData.dateIssued">
+          </div>
+          <div class="main__invoice--header-item">
+            <label class="main__invoice--header-item-label">Date Due: </label>
+            <input class="main__invoice--header-item-input" type="text" name="dueDate" [(ngModel)]="invoiceData.dueData">
+          </div>
+
+        </div>
+        <div class="main__invoice--title">
+          <div class="main__invoice--title-description">
+            <label class="main__invoice--title-description-label">Invoice </label>
+            <input class="main__invoice--title-description-input" type="text" name="invoiceDetail" [(ngModel)]="invoiceData.invoiceDetail">
+          </div>
+          {{invoiceData.invoiceDetail}}
+          <div class="main__invoice--title-description">
+            <label class="main__invoice--title-description-logo">Invoice Logo</label>
+          </div>
+
+        </div>
+        <div class="main__invoice--bill">
+          <div class="main__invoice--bill-from">Bill From</div>
+          <div class="main__invoice--bill-to">Bill To</div>
+        </div>
+
+        <div class="main__invoice--items">
+
+
+<!--          <div class="main__invoice&#45;&#45;item" *ngFor="let item in invoiceItems; let idx = index">-->
+<!--            <div class="main__invoice&#45;&#45;field">-->
+<!--              Item-->
+<!--              <input placeholder="Item Name" type="text" [(ngModel)]="invoiceData.invoiceItems[idx].itemName">-->
+<!--            </div>-->
+<!--            <div class="main__invoice&#45;&#45;field">-->
+<!--              Cost-->
+<!--              <input value="" placeholder="0.00" type="text">-->
+<!--            </div>-->
+<!--            <div class="main__invoice&#45;&#45;field">-->
+<!--              Qty-->
+<!--              <input value="" placeholder="Qty" type="text">-->
+<!--            </div>-->
+<!--            <div class="main__invoice&#45;&#45;field">-->
+<!--              Price-->
+<!--              <div class="price"></div>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+        <div class="main__invoice--item-button">
+          <button class="main__invoice--item-button-input">Item</button>
+        </div>
+        <div class="main__invoice--amount">
+          <div>
+
+          </div>
+          <div class="main__invoice--amount-sum">
+            <div class="main__invoice--amount-sum-subtotal">
+              <div class="sum-subtotal">
+                <span class="sum-subtotal-name">Subtotal</span>
+              </div>
+              <div class="sum-subtotal">
+                <span class="sum-subtotal-value">$0.00</span>
+              </div>
+              <div class="sum-subtotal">
+                <span class="sum-subtotal-name">Discount</span>
+              </div>
+              <div class="sum-subtotal">
+                <span class="sum-subtotal-value">$0.00</span>
+              </div>
+
+            </div>
+            <div class="main__invoice--amount-sum-total">
+              <div class="sum-total">
+                <span class="sum-total-name">Invoice Total</span>
+              </div>
+              <div class="sum-total">
+                <span class="sum-total-value">$0.00</span>
+              </div>
+              <div class="sum-total">
+                <span class="sum-total-name">Paid to date</span>
+              </div>
+              <div class="sum-total">
+                <span class="sum-total-value">$0.00</span>
+              </div>
+              <div class="sum-total">
+                <span class="sum-total-name">Balance(USD)</span>
+              </div>
+              <div class="sum-total">
+                <span class="sum-total-value">$0.00</span>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+        <app-invoice-form-settings></app-invoice-form-settings>
+
+      </div>
+
+    </form>
+  </main>
+</div>
