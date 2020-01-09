@@ -1,12 +1,51 @@
-<form>
+<form #registerFormVariable="ngForm" name="registerForm" (ngSubmit)="onSubmit(registerFormVariable.value)">
+
   <div class="register__item">
-    <label class="register__item--username">Email Address</label>
-    <input class="register__item--value" type="email">
-    <label class="register__item--password">Password</label>
-    <input class="register__item--value" type="password">
-    <label class="register__item--password">Retype Password</label>
-    <input class="register__item--value" type="password">
-    <button class="register__item--submit" type="submit"> Register</button>
+    <label for="registerEmailFld">Email Address</label>
+    <input class="register__item--value"
+           type="email"
+           #registerNameVariable=ngModel
+           required
+           name="registerEmail"
+           id="registerEmailFld"
+           autocomplete="off"
+           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+           [(ngModel)]="registerEmail">
+
+    <div *ngIf="registerNameVariable.errors && (registerNameVariable.dirty || registerNameVariable.touched)"
+         class="alert__register--email">
+      <div [hidden]="!registerNameVariable.errors.required">
+        Email Address is required
+      </div>
+      <div [hidden]="!registerNameVariable.errors.pattern">
+        Invalid email address
+      </div>
+    </div>
+    <label for="registerPasswordFld">Password</label>
+    <input class="register__item--value"
+           type="password"
+           minlength="8"
+           required
+           autocomplete="off"
+           #registerPasswordVariable=ngModel
+           name="registerPassword"
+           id="registerPasswordFld"
+           pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+           [(ngModel)]="registerPass">
+
+    <div *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
+         class="alert__password">
+      <div [hidden]="!registerPasswordVariable.errors.required">
+        Invalid password
+      </div>
+      <div [hidden]="!registerPasswordVariable.errors.minlength">
+        Password should be of minimum 8 characters
+      </div>
+      <div [hidden]="!registerPasswordVariable.errors.pattern">
+        Password must contain at least one letter, one number and one special character
+      </div>
+    </div>
+    <button class="register__item--submit" type="submit" [disabled]="!registerFormVariable.valid"> Register</button>
   </div>
 </form>
 

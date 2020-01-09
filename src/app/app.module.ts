@@ -15,6 +15,7 @@ import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ClientFormComponent } from './client-form/client-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegisterComponent } from './pages/register/register.component';
     LogoComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ClientFormComponent
   ],
   imports: [
     BrowserModule,
