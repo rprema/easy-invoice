@@ -1,0 +1,25 @@
+.register__item{
+  display: grid;
+  max-width: 250px;
+  justify-self: center;
+  align-self:center;
+  margin:auto;
+  line-height: 1.5;
+
+
+
+  .register__item--username{
+    margin-bottom: 0.25rem;
+  }
+  .register__item--value{
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border:1px solid #777;
+  }
+  .register__item--submit{
+    max-width: 100px;
+    background: #5b5ef7;
+    border-radius: 4px;
+    color:#fff;
+  }
+}

@@ -13,6 +13,8 @@ import {HeaderComponent} from './components/header/header.component';
 import {LogoComponent} from './components/logo/logo.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {FormsModule} from '@angular/forms';
     MenuComponent,
     HeaderComponent,
     LogoComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
