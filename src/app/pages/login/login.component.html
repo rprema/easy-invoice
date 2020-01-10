@@ -1,37 +1,44 @@
-<form #formVariable="ngForm" name="loginForm" (ngSubmit)="onSubmit(formVariable.value)">
-  <div class="login__item">
-    <label for="loginNameFld">Email Address</label>
-    <input class="login__item--value"
-           type="email"
-           #loginNameVariable=ngModel
-           required
-           name="loginName"
-           id="loginNameFld"
-           autocomplete="off"
-           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-           [(ngModel)]="loginName">
-    <div *ngIf="loginNameVariable.errors && (loginNameVariable.dirty || loginNameVariable.touched)"
-         class="alert__username">
-      <div [hidden]="!loginNameVariable.errors.required">
-        Email Address is required
+<div class="login-page">
+  <app-logo></app-logo>
+  <form #formVariable="ngForm" name="loginForm" (ngSubmit)="onSubmit(formVariable.value)">
+    <div class="login__fields">
+      <div class="login__field">
+        <label for="loginNameFld">Email Address</label>
+        <input class="login__field--value"
+               type="email"
+               #loginNameVariable=ngModel
+               required
+               name="loginName"
+               id="loginNameFld"
+               placeholder="email@domail.com"
+               autocomplete="off"
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+               [(ngModel)]="loginName">
+        <div *ngIf="loginNameVariable.errors && (loginNameVariable.dirty || loginNameVariable.touched)"
+             class="login__errors">
+          <div [hidden]="!loginNameVariable.errors.required">
+            Email Address is required
+          </div>
+          <div [hidden]="!loginNameVariable.errors.pattern">
+            Invalid email address
+          </div>
+        </div>
       </div>
-      <div [hidden]="!loginNameVariable.errors.pattern">
-        Invalid email address
-      </div>
-    </div>
-    <label for="passwordFld">Password</label>
-    <input class="login__item--value"
-           type="password"
-           minlength="8"
-           required
-           autocomplete="off"
-           #passwordVariable=ngModel
-           name="password"
-           id="passwordFld"
-           pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-           [(ngModel)]="loginPass">
+      <div class="login__field">
+        <label for="passwordFld">Password</label>
+        <input class="login__field--value"
+               type="password"
+               minlength="8"
+               required
+               placeholder="********"
+               autocomplete="off"
+               #passwordVariable=ngModel
+               name="password"
+               id="passwordFld"
+               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+               [(ngModel)]="loginPass">
         <div *ngIf="passwordVariable.errors && (passwordVariable.dirty || passwordVariable.touched)"
-         class="alert__password">
+             class="login__errors">
           <div [hidden]="!passwordVariable.errors.required">
             Invalid password
           </div>
@@ -42,7 +49,16 @@
             Password must contain at least one letter, one number and one special character
           </div>
         </div>
-      <button class="login__item--submit" type="submit" [disabled]="!formVariable.valid" (click)="onLogin()"> Log In</button>
+      </div>
+      <div class="login__buttons">
+        <button class="login__field--submit" type="submit" [disabled]="!formVariable.valid" (click)="onLogin()"> Log In
+        </button>
+        <button class="forgot__password" type="submit"> Forgot Password?</button>
+      </div>
     </div>
-</form>
-
+  </form>
+  <div class="register__action">
+    <div class="register__action--info">Don't have an account?</div>
+    <button (click)="onRegister()">Register</button>
+  </div>
+</div>

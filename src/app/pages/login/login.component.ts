@@ -32,4 +32,9 @@ export class LoginComponent implements OnInit {
     console.log('Login button clicked!');
     this.router.navigateByUrl('invoices');
   }
+
+  onRegister() {
+    console.log('Register button clicked');
+    this.router.navigateByUrl('register');
+  }
 }
