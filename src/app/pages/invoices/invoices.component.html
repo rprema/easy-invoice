@@ -25,12 +25,12 @@
         <div class="main-content__detail_item">CLIENT</div>
         <div class="main-content__detail_item">AMOUNT</div>
       </div>
-      <div class="main-content__detail_items" *ngFor="let item of invoiceItems" (click)="onNavigateToInvoice()">
+      <div class="main-content__detail_items" *ngFor="let item of invoices" (click)="onNavigateToInvoice()">
         <div class="main-content__detail_item detail_item-name">{{item.invoiceName}}</div>
         <div class="main-content__detail_item">{{item.invoiceDate}}</div>
         <div class="main-content__detail_item detail__item-status">{{item.invoiceStatus}}</div>
-        <div class="main-content__detail_item">{{item.invoiceClient}}</div>
-        <div class="main-content__detail_item">{{item.invoiceAmount}}</div>
+        <div class="main-content__detail_item">{{getClientName(item)}}</div>
+        <div class="main-content__detail_item">{{getInvoiceAmount(item) | currency}}</div>
       </div>
     </div>
   </form>
