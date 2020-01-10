@@ -46,6 +46,11 @@
     color: #777;
     margin-bottom: 0.5rem;
     user-select: none;
+
+    ::after{
+      content: "*";
+      color: #f56565;
+    }
   }
 
   .form-input {
@@ -58,7 +63,7 @@
     text-align: left;
 
     &.ng-touched.ng-invalid {
-      border-color: red;
+      border-color: #f56565;
     }
   }
 
@@ -73,8 +78,9 @@
 
 .alert__company {
 
-  color: var(--primary-color);
-  margin-top: 0.75rem;
+  color: #f56565;
+  margin-top: 5px;
+  font-size: 14px;
 }
 
 .main-container--buttons {
