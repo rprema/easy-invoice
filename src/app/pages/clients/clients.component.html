@@ -6,7 +6,7 @@
         <path class="heroicon-ui"
               d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"/>
       </svg>
-      Add Client
+      New Client
     </button>
 
   </div>
@@ -18,7 +18,7 @@
         <div class="main-content__detail--item">PHONE</div>
         <div class="main-content__detail--item">CITY</div>
       </div>
-      <div class="main-content__detail--items" *ngFor= "let item of clientItems" (click)="onNavigateToClient()" >
+      <div class="main-content__detail--items" *ngFor= "let item of clients" (click)="onNavigateToClient()" >
         <div class="main-content__detail--item ">{{item.clientName}}</div>
         <div class="main-content__detail--item">{{item.clientEmail}}</div>
         <div class="main-content__detail--item ">{{item.clientPhone}}</div>
