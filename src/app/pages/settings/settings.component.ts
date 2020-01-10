@@ -13,6 +13,10 @@ export class SettingsComponent implements OnInit {
   companyAddress: any;
   companyCity: any;
   companyState: any;
+  companyPostal: any;
+  currencySymbol: any;
+  taxPercentage: any;
+  discountAmount: any;
 
   onSubmit(settingsData) {
     console.log(`settingsData: `, settingsData);
@@ -21,6 +25,10 @@ export class SettingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  onSaveSettings(){
+    console.log('clicked on save settings');
+
   }
 
 }

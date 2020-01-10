@@ -1,12 +1,12 @@
 <div class="settings-page">
-  <div class="company__header">
-    <h1 class="company__header--text">Settings</h1>
+  <div class="main-content__heading">
+    <h1>Settings</h1>
   </div>
 
 
   <form #companyForm="ngForm" name="companyForm" (ngSubmit)="onSubmit(companyForm.value)" class="main__form">
+    <h4>Company Information</h4>
     <div class="company__form--items">
-
       <div class="company__form--item">
         <label class="form-label">Name:</label>
         <input class="form-input"
@@ -121,7 +121,7 @@
         <input class="form-input"
                type="text"
                #companyPostalVariable="ngModel"
-               [(ngModel)]="companyState"
+               [(ngModel)]="companyPostal"
                required
                name="companyPostal"
                id="companyPostalFld">
@@ -132,10 +132,64 @@
           </div>
         </div>
       </div>
-      <div class="main-container--buttons">
-        <button class="update-company" [disabled]="!companyForm.valid">Update Client</button>
+    </div>
+    <hr/>
+    <h4>Global Settings</h4>
+    <div class="company__form--items company__form--items--settings">
+      <div class="company__form--item">
+        <label class="form-label">Currency</label>
+        <input class="form-input"
+               type="text"
+               #currencySymbolVariable="ngModel"
+               [(ngModel)]="currencySymbol"
+               required
+               name="currencySymbol"
+               id="currencySymbolFld">
+        <div *ngIf="currencySymbolVariable.errors && (currencySymbolVariable.dirty || currencySymbolVariable.touched)"
+             class="alert__company">
+          <div [hidden]="!currencySymbolVariable.errors.required">
+            Currency is required
+          </div>
+        </div>
+      </div>
+      <div class="company__form--item">
+        <label class="form-label">Tax Percentage</label>
+        <input class="form-input"
+               type="text"
+               #taxPercentageVariable="ngModel"
+               [(ngModel)]="taxPercentage"
+               required
+               name="taxPercentage"
+               id="taxPercentageFld">
+        <div *ngIf="taxPercentageVariable.errors && (taxPercentageVariable.dirty || taxPercentageVariable.touched)"
+             class="alert__company">
+          <div [hidden]="!taxPercentageVariable.errors.required">
+            Tax Percentage is required
+          </div>
+        </div>
+      </div>
+      <div class="company__form--item">
+        <label class="form-label">Discount</label>
+        <input class="form-input"
+               type="text"
+               #discountAmountVariable="ngModel"
+               [(ngModel)]="discountAmount"
+               required
+               name="discountAmount"
+               id="discountAmountFld">
+        <div *ngIf="discountAmountVariable.errors && (discountAmountVariable.dirty || discountAmountVariable.touched)"
+             class="alert__company">
+          <div [hidden]="!discountAmountVariable.errors.required">
+            Discount is required
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="main-container--buttons">
+      <button class="save__settings" [disabled]="!companyForm.valid" (click)="onSaveSettings()">Save Settings</button>
+    </div>
+
   </form>
 </div>
 
