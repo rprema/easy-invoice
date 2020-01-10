@@ -3,4 +3,13 @@
   display: flex;
   align-items: center;
   padding: 0 3rem;
+  box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.16);
+  position: relative;
+  justify-content: flex-end;
+
+
+}
+
+.user__profile{
+  font-size: 14px;
 }
