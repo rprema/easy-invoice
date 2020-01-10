@@ -19,19 +19,16 @@ export class InvoiceFormComponent implements OnInit {
     console.log(`invoiceData`, this.invoiceData);
   }
 
-  get invoiceItems() {
-    return [
-      {
-        itemName: 'Sample Item 1',
-        cost: '10',
-        quantity: '2'
-      },
-      {
-        itemName: 'Sample Item 2',
-        cost: '10',
-        quantity: '2'
-      }
-    ];
+
+  onClickSave() {
+    console.log('Clicked on Save Button');
+  }
+
+  onClickPreview() {
+    console.log('Clicked on Preview Button');
+  }
+  onClickSend() {
+    console.log('Clicked on Send Invoice Button');
   }
 
 }

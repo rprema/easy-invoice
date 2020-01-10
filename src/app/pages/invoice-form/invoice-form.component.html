@@ -1,8 +1,15 @@
 <div class="invoice-form-page">
-  <form (ngSubmit)="onSubmitForm(invoiceForm)" #invoiceForm="ngForm">
-    <button type="submit" class="invoice__button">Save</button>
 
-    <div class="main__invoice">
+  <div class="main__invoice">
+
+    <div class ="action__section">
+      <button class="btn action__section--save" (click)="onClickSave()">Save</button>
+      <button class="btn action__section--preview" (click)="onClickPreview()">Preview</button>
+      <button class="btn action__section--send" (click)="onClickSend()">Send Invoice</button>
+
+    </div>
+    <form (ngSubmit)="onSubmitForm(invoiceForm)" #invoiceForm="ngForm">
+
       <div class="main__invoice--header">
         <div class="main__invoice--header-item">
           <label class="main__invoice--header-item-label">Invoice # </label>
@@ -104,9 +111,9 @@
           </div>
         </div>
       </div>
-      <app-invoice-form-settings></app-invoice-form-settings>
 
-    </div>
 
-  </form>
+    </form>
+  </div>
+
 </div>
