@@ -7,7 +7,7 @@ import {SettingsComponent} from './pages/settings/settings.component';
 import {LoginComponent} from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
 import {InvoiceFormComponent} from './pages/invoice-form/invoice-form.component';
-import {ClientFormComponent} from './client-form/client-form.component';
+import {ClientFormComponent} from './pages/client-form/client-form.component';
 
 const routes: Routes = [
   {
