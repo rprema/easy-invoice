@@ -1,37 +1,48 @@
-<div class="invoices-page">
-  <div class="main-content__heading">
-    <h1>Invoices</h1>
-    <button class="btn" (click)="onAddInvoice()">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <path class="heroicon-ui"
-              d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"/>
-      </svg>
-      New Invoice
-    </button>
+<div class="container">
+  <div class="sidebar-container">
+    <app-logo></app-logo>
+    <app-menu></app-menu>
   </div>
-  <form>
-    <div class="main-content__items">
-      <a href="#" class="main-content__item main-content__item--active">All</a>
-      <a href="#" class="main-content__item">Draft</a>
-      <a href="#" class="main-content__item">Overdue</a>
-      <a href="#" class="main-content__item">Paid</a>
-      <a href="#" class="main-content__item">Sent</a>
-    </div>
-    <div class="main-content__details">
-      <div class="main-content__detail_items main-content__detail-header">
-        <div class="main-content__detail_item detail_item-name">INVOICE NAME</div>
-        <div class="main-content__detail_item">INVOICE DATE</div>
-        <div class="main-content__detail_item">STATUS</div>
-        <div class="main-content__detail_item">CLIENT</div>
-        <div class="main-content__detail_item">AMOUNT</div>
+  <main class="main-container">
+    <app-header></app-header>
+    <div class="main-content">
+      <div class="invoices-page">
+        <div class="main-content__heading">
+          <h1>Invoices</h1>
+          <button class="btn" (click)="onAddInvoice()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path class="heroicon-ui"
+                    d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"/>
+            </svg>
+            New Invoice
+          </button>
+        </div>
+        <form>
+          <div class="main-content__items">
+            <a href="#" class="main-content__item main-content__item--active">All</a>
+            <a href="#" class="main-content__item">Draft</a>
+            <a href="#" class="main-content__item">Overdue</a>
+            <a href="#" class="main-content__item">Paid</a>
+            <a href="#" class="main-content__item">Sent</a>
+          </div>
+          <div class="main-content__details">
+            <div class="main-content__detail_items main-content__detail-header">
+              <div class="main-content__detail_item detail_item-name">INVOICE NAME</div>
+              <div class="main-content__detail_item">INVOICE DATE</div>
+              <div class="main-content__detail_item">STATUS</div>
+              <div class="main-content__detail_item">CLIENT</div>
+              <div class="main-content__detail_item">AMOUNT</div>
+            </div>
+            <div class="main-content__detail_items" *ngFor="let item of invoices" (click)="onNavigateToInvoice()">
+              <div class="main-content__detail_item detail_item-name">{{item.invoiceName}}</div>
+              <div class="main-content__detail_item">{{item.invoiceDate}}</div>
+              <div class="main-content__detail_item detail__item-status">{{item.invoiceStatus}}</div>
+              <div class="main-content__detail_item">{{getClientName(item)}}</div>
+              <div class="main-content__detail_item">{{getInvoiceAmount(item) | currency}}</div>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="main-content__detail_items" *ngFor="let item of invoices" (click)="onNavigateToInvoice()">
-        <div class="main-content__detail_item detail_item-name">{{item.invoiceName}}</div>
-        <div class="main-content__detail_item">{{item.invoiceDate}}</div>
-        <div class="main-content__detail_item detail__item-status">{{item.invoiceStatus}}</div>
-        <div class="main-content__detail_item">{{getClientName(item)}}</div>
-        <div class="main-content__detail_item">{{getInvoiceAmount(item) | currency}}</div>
-      </div>
     </div>
-  </form>
+  </main>
 </div>

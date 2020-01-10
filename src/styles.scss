@@ -52,3 +52,28 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 18% 82%;
+  height: 100vh;
+}
+
+.sidebar-container {
+  background-color: #2f365f;
+  display: grid;
+  grid-template-rows: 80px auto;
+}
+
+.main-container {
+  background-color: #EEF1F6;
+  display: grid;
+  grid-template-rows: 80px auto;
+  font-size: 16px;
+}
+
+.main-content {
+  padding: 2rem 3rem;
+  background-color: #F1F5F8;
+}
+
+

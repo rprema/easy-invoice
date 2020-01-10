@@ -42,7 +42,7 @@
             Password must contain at least one letter, one number and one special character
           </div>
         </div>
-      <button class="login__item--submit" type="submit" [disabled]="!formVariable.valid"> Log In</button>
+      <button class="login__item--submit" type="submit" [disabled]="!formVariable.valid" (click)="onLogin()"> Log In</button>
     </div>
 </form>
 

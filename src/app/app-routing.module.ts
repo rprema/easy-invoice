@@ -10,14 +10,42 @@ import {InvoiceFormComponent} from './pages/invoice-form/invoice-form.component'
 import {ClientFormComponent} from './client-form/client-form.component';
 
 const routes: Routes = [
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'invoices', component: InvoicesComponent},
-  {path: 'invoice-form', component: InvoiceFormComponent},
-  {path: 'clients', component: ClientsComponent},
-  {path: 'client-form', component: ClientFormComponent},
-  {path: 'settings', component: SettingsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {
+    path: '',
+    component: LoginComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'invoices',
+    component: InvoicesComponent
+  },
+  {
+    path: 'invoice-form',
+    component: InvoiceFormComponent
+  },
+  {
+    path: 'clients',
+    component: ClientsComponent
+  },
+  {
+    path: 'client-form',
+    component: ClientFormComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
 
 ];
 
