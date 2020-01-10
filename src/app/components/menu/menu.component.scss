@@ -13,12 +13,23 @@
       padding: 16px 2rem;
       color: #b2b7ff;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      svg {
+        fill: #b2b7ff;
+        margin: 0 12px 0 0;
+      }
 
       &.active,
       &:hover,
       &:active {
         color: #fff;
         cursor: pointer;
+
+        svg {
+          fill: #fff;
+        }
       }
 
     }
