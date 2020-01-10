@@ -33,8 +33,9 @@
            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
            [(ngModel)]="registerPass">
 
-    <div *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
-         class="alert__password">
+    <div
+      *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
+      class="alert__password">
       <div [hidden]="!registerPasswordVariable.errors.required">
         Invalid password
       </div>

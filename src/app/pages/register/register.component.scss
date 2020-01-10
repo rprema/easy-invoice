@@ -28,7 +28,7 @@ form{
   }
   .register__item--submit {
     max-width: 100px;
-    background: #5b5ef7;
+    background: var(--primary-color);
     border-radius: 4px;
     color: #fff;
     height: 2rem;
@@ -38,9 +38,9 @@ form{
 }
 
 .alert__register--email {
-  color: #5b5ef7;
+  color: var(--primary-color);
 }
 
 .alert__password {
-  color: #5b5ef7;
+  color: var(--primary-color);
 }
