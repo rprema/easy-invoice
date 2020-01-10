@@ -25,40 +25,41 @@
           </div>
         </div>
       </div>
-        <div class="register__field">
-          <label for="registerPasswordFld">Password</label>
-          <input class="register__item--value"
-                 type="password"
-                 minlength="8"
-                 required
-                 autocomplete="off"
-                 #registerPasswordVariable=ngModel
-                 name="registerPassword"
-                 id="registerPasswordFld"
-                 pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-                 [(ngModel)]="registerPass">
+      <div class="register__field">
+        <label for="registerPasswordFld">Password</label>
+        <input class="register__item--value"
+               type="password"
+               minlength="8"
+               required
+               autocomplete="off"
+               #registerPasswordVariable=ngModel
+               name="registerPassword"
+               id="registerPasswordFld"
+               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+               [(ngModel)]="registerPass">
 
-          <div
-            *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
-            class="register__errors">
-            <div [hidden]="!registerPasswordVariable.errors.required">
-              Invalid password
-            </div>
-            <div [hidden]="!registerPasswordVariable.errors.minlength">
-              Password should be of minimum 8 characters
-            </div>
-            <div [hidden]="!registerPasswordVariable.errors.pattern">
-              Password must contain at least one letter, one number and one special character
-            </div>
+        <div
+          *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
+          class="register__errors">
+          <div [hidden]="!registerPasswordVariable.errors.required">
+            Invalid password
+          </div>
+          <div [hidden]="!registerPasswordVariable.errors.minlength">
+            Password should be of minimum 8 characters
+          </div>
+          <div [hidden]="!registerPasswordVariable.errors.pattern">
+            Password must contain at least one letter, one number and one special character
           </div>
         </div>
-        <div class="register__buttons">
-          <button class="register__field--submit" type="submit" [disabled]="!registerFormVariable.valid"> Register</button>
-        </div>
-       </div>
+      </div>
+      <div class="register__buttons">
+        <button class="register__field--submit" type="submit" [disabled]="!registerFormVariable.valid"> Register</button>
+      </div>
+    </div>
   </form>
   <div class="register__action">
     <div class="register__action--info">Already have an account?</div>
-    <button (click)="onRegister()">Login</button>
+    <button (click)="onLogin()">Login</button>
   </div>
 </div>
+
