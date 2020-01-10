@@ -1,0 +1,44 @@
+.clients-page {
+
+     .main-content__details {
+    margin-top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+
+    .main-content__detail--items {
+      background-color: #F6FAFB;
+      list-style: none;
+      display: grid;
+      grid-template-columns:  2fr 1fr 1fr 1fr;
+      border-bottom: 1px solid #E3E6EB;
+      padding: 14px 18px;
+      line-height: 1;
+      align-items: center;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+
+      .main-content__detail--item {
+        color: #626971;
+        font-size: 14px;
+        flex: 1;
+      }
+
+      .detail_item-transaction {
+        flex: 2;
+      }
+
+    }
+
+    .detail_items_factor {
+      background-color: #FFFFFF;
+    }
+  }
+
+}
+
+
