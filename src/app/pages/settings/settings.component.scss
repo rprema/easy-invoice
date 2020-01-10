@@ -11,18 +11,18 @@
 }
 
 
-.client__header--text{
+.company__header--text{
   margin:0;
   color: #b2b7ff;
 }
-.client__form--items {
+.company__form--items {
   border: 0 solid #dae1e7;
   display: flex;
   flex-wrap: wrap;
   line-height: 1;
 }
 
-.client__form--item{
+.company__form--item{
   display: flex;
   flex-direction: column;
   flex: 0 0 48%;
@@ -47,11 +47,21 @@
     background-color: #fff;
     border-radius: 0.25rem;
     text-align: left;
+
+    &.ng-touched.ng-invalid {
+      border-color: red;
+    }
   }
 
 }
 
-.main-container--buttons{
+.alert__company {
+
+  color: #5b5ef7;
+  margin-top: 0.75rem;
+}
+
+.main-container--buttons {
   padding: 1rem 1%;
   //padding-bottom: 1rem;
   display: flex;
@@ -60,18 +70,8 @@
   border: 0 solid #dae1e7;
   background-color: #F8FAFC;
 
-
-  .delete-client{
-    color: #e3342f;
-    background: transparent;
-    border:0;
-
-    &:hover{
-      text-decoration: underline;
-    }
-
-  }
-  .update-client{
+}
+  .update-company{
     margin-left: auto;
     align-items: center;
     padding: 0.75rem 1.5rem;
@@ -82,6 +82,6 @@
     font-weight: 700;
     white-space: nowrap;
   }
-}
+
 
 

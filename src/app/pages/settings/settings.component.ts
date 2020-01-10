@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
+  companyName: any;
+  companyEmail: any;
+  companyPhone: any;
+  companyAddress: any;
+  companyCity: any;
+  companyState: any;
+
+  onSubmit(settingsData) {
+    console.log(`settingsData: `, settingsData);
+
+  }
   constructor() { }
 
   ngOnInit() {

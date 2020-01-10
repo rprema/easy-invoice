@@ -54,12 +54,12 @@
         <label class="form-label">Phone:</label>
         <input class="form-input"
                type="number"
-               #clientPhoneVariable="ngModel"
-               required
-               name="clientPhone"
-               id="clientPhoneFld"
-               autocomplete="off"
-               [(ngModel)]="clientPhone">
+        #clientPhoneVariable="ngModel"
+        required
+        name="clientPhone"
+        id="clientPhoneFld"
+        autocomplete="off"
+        [(ngModel)]="clientPhone">
         <div *ngIf="clientPhoneVariable.errors && (clientPhoneVariable.dirty || clientPhoneVariable.touched)"
              class="alert__client">
           <div [hidden]="!clientPhoneVariable.errors.required">
@@ -71,11 +71,11 @@
         <label class="form-label">Street Address:</label>
         <input class="form-input"
                type="text"
-               #clientAddressVariable="ngModel"
-               [(ngModel)]="clientAddress"
-               required
-               name="clientAddress"
-               id="clientAddressFld">
+        #clientAddressVariable="ngModel"
+        [(ngModel)]="clientAddress"
+        required
+        name="clientAddress"
+        id="clientAddressFld">
         <div *ngIf="clientAddressVariable.errors && (clientAddressVariable.dirty || clientAddressVariable.touched)"
              class="alert__client">
           <div [hidden]="!clientAddressVariable.errors.required">
