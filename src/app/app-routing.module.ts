@@ -6,10 +6,12 @@ import {ClientsComponent} from './pages/clients/clients.component';
 import {SettingsComponent} from './pages/settings/settings.component';
 import {LoginComponent} from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
+import {InvoiceFormComponent} from './pages/invoice-form/invoice-form.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'invoices', component: InvoicesComponent},
+  {path: 'invoice-form', component: InvoiceFormComponent},
   {path: 'clients', component: ClientsComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'login', component: LoginComponent},

@@ -16,41 +16,15 @@
         <div class="main-content__detail_item">STATUS</div>
         <div class="main-content__detail_item">CLIENT</div>
         <div class="main-content__detail_item">AMOUNT</div>
-        <div class="main-content__detail_item">EDIT</div>
+      </div>
+      <div class="main-content__detail_items" *ngFor="let item of invoiceItems" (click)="onNavigateToInvoice()">
+        <div class="main-content__detail_item detail_item-name">{{item.invoiceName}}</div>
+        <div class="main-content__detail_item">{{item.invoiceDate}}</div>
+        <div class="main-content__detail_item detail__item-status">{{item.invoiceStatus}}</div>
+        <div class="main-content__detail_item">{{item.invoiceClient}}</div>
+        <div class="main-content__detail_item">{{item.invoiceAmount}}</div>
+      </div>
 
-      </div>
-      <div class="main-content__detail_items detail_items_factor">
-        <div class="main-content__detail_item detail_item-name">INVOICE NAME</div>
-        <div class="main-content__detail_item">Sept 11, 2019</div>
-        <div class="main-content__detail_item detail__item-status">Draft</div>
-        <div class="main-content__detail_item">Genesys</div>
-        <div class="main-content__detail_item">$20000</div>
-        <div class="main-content__detail_item">EDIT</div>
-      </div>
-      <div class="main-content__detail_items detail_items_factor">
-        <div class="main-content__detail_item detail_item-name">INVOICE NAME</div>
-        <div class="main-content__detail_item">Oct 20, 2018</div>
-        <div class="main-content__detail_item detail__item-status">Overdue</div>
-        <div class="main-content__detail_item">Sandhills</div>
-        <div class="main-content__detail_item">$25639</div>
-        <div class="main-content__detail_item">EDIT</div>
-      </div>
-      <div class="main-content__detail_items detail_items_factor">
-        <div class="main-content__detail_item detail_item-name">INVOICE NAME</div>
-        <div class="main-content__detail_item">Jan 01, 2020</div>
-        <div class="main-content__detail_item detail__item-status">Paid</div>
-        <div class="main-content__detail_item">Metric Systems</div>
-        <div class="main-content__detail_item">$56983</div>
-        <div class="main-content__detail_item">EDIT</div>
-      </div>
-      <div class="main-content__detail_items detail_items_factor">
-        <div class="main-content__detail_item detail_item-name">INVOICE NAME</div>
-        <div class="main-content__detail_item">Jan 01, 2020</div>
-        <div class="main-content__detail_item detail__item-status">Sent</div>
-        <div class="main-content__detail_item">Express Ink</div>
-        <div class="main-content__detail_item">$56983</div>
-        <div class="main-content__detail_item">EDIT</div>
-      </div>
     </div>
   </form>
 </div>
