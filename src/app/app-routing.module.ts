@@ -7,12 +7,14 @@ import {SettingsComponent} from './pages/settings/settings.component';
 import {LoginComponent} from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
 import {InvoiceFormComponent} from './pages/invoice-form/invoice-form.component';
+import {ClientFormComponent} from './client-form/client-form.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'invoices', component: InvoicesComponent},
   {path: 'invoice-form', component: InvoiceFormComponent},
   {path: 'clients', component: ClientsComponent},
+  {path: 'client-form', component: ClientFormComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},

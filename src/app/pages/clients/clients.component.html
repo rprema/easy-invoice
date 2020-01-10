@@ -1,37 +1,29 @@
 <div class="clients-page">
-  <h1 class="main-content__heading">Clients</h1>
+  <div class =main-content__heading>
+    <h1>Clients</h1>
+    <button class="btn" (click)="onAddClient()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path class="heroicon-ui"
+              d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"/>
+      </svg>
+      Add Client
+    </button>
+
+  </div>
   <form>
     <div class="main-content__details">
-      <div class="main-content__detail--items header">
+      <div class="main-content__detail--items main-content__detail--items-header">
         <div class="main-content__detail--item ">CLIENT NAME</div>
         <div class="main-content__detail--item">EMAIL</div>
         <div class="main-content__detail--item">PHONE</div>
         <div class="main-content__detail--item">CITY</div>
       </div>
-      <div class="main-content__detail--items">
-        <div class="main-content__detail--item ">CLIENT NAME</div>
-        <div class="main-content__detail--item">EMAIL</div>
-        <div class="main-content__detail--item ">1234567890</div>
-        <div class="main-content__detail--item">Miami</div>
+      <div class="main-content__detail--items" *ngFor= "let item of clientItems" (click)="onNavigateToClient()" >
+        <div class="main-content__detail--item ">{{item.clientName}}</div>
+        <div class="main-content__detail--item">{{item.clientEmail}}</div>
+        <div class="main-content__detail--item ">{{item.clientPhone}}</div>
+        <div class="main-content__detail--item">{{item.clientCity}}</div>
       </div>
-      <div class="main-content__detail--items">
-        <div class="main-content__detail--item detail__item-name">CLIENT NAME</div>
-        <div class="main-content__detail--item">EMAIL</div>
-        <div class="main-content__detail--item ">2345678901</div>
-        <div class="main-content__detail--item">New York</div>
       </div>
-      <div class="main-content__detail--items">
-        <div class="main-content__detail--item">CLIENT NAME</div>
-        <div class="main-content__detail--item">EMAIL</div>
-        <div class="main-content__detail--item ">3456789012</div>
-        <div class="main-content__detail--item">California</div>
-      </div>
-      <div class="main-content__detail--items">
-        <div class="main-content__detail--item">CLIENT NAME</div>
-        <div class="main-content__detail--item">EMAIL</div>
-        <div class="main-content__detail--item ">4567890123</div>
-        <div class="main-content__detail--item">Dallas</div>
-      </div>
-    </div>
   </form>
 </div>
