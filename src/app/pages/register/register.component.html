@@ -1,14 +1,15 @@
-<div class="register-page">
+<div class="auth__page register__page">
   <app-logo></app-logo>
 
   <form #registerFormVariable="ngForm" name="registerForm" (ngSubmit)="onSubmit(registerFormVariable.value)">
-    <div class="register__fields">
-      <div class="register__field">
+    <h4>Create Account</h4>
+    <div class="auth__fields">
+      <div class="auth__field">
         <label for="registerEmailFld">Email Address</label>
-        <input class="register__item--value"
-               type="email"
+        <input type="email"
                #registerNameVariable=ngModel
                required
+               placeholder="email@domain.com"
                name="registerEmail"
                id="registerEmailFld"
                autocomplete="off"
@@ -16,7 +17,7 @@
                [(ngModel)]="registerEmail">
 
         <div *ngIf="registerNameVariable.errors && (registerNameVariable.dirty || registerNameVariable.touched)"
-             class="register__errors">
+             class="auth__errors">
           <div [hidden]="!registerNameVariable.errors.required">
             Email Address is required
           </div>
@@ -25,12 +26,12 @@
           </div>
         </div>
       </div>
-      <div class="register__field">
+      <div class="auth__field">
         <label for="registerPasswordFld">Password</label>
-        <input class="register__item--value"
-               type="password"
+        <input type="password"
                minlength="8"
                required
+               placeholder="********"
                autocomplete="off"
                #registerPasswordVariable=ngModel
                name="registerPassword"
@@ -40,7 +41,7 @@
 
         <div
           *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
-          class="register__errors">
+          class="auth__errors">
           <div [hidden]="!registerPasswordVariable.errors.required">
             Invalid password
           </div>
@@ -52,13 +53,13 @@
           </div>
         </div>
       </div>
-      <div class="register__buttons">
-        <button class="register__field--submit" type="submit" [disabled]="!registerFormVariable.valid"> Register</button>
+      <div class="auth__buttons">
+        <button class="auth__field--submit" type="submit" [disabled]="!registerFormVariable.valid"> Register</button>
       </div>
     </div>
   </form>
-  <div class="register__action">
-    <div class="register__action--info">Already have an account?</div>
+  <div class="auth__action">
+    <div class="auth__action--info">Already have an account?</div>
     <button (click)="onLogin()">Login</button>
   </div>
 </div>

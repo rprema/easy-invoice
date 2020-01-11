@@ -1,11 +1,11 @@
-<div class="login-page">
+<div class="auth__page login__page">
   <app-logo></app-logo>
   <form #formVariable="ngForm" name="loginForm" (ngSubmit)="onSubmit(formVariable.value)">
-    <div class="login__fields">
-      <div class="login__field">
+    <h4>Welcome to EasyInvoice</h4>
+    <div class="auth__fields">
+      <div class="auth__field">
         <label for="loginNameFld">Email Address</label>
-        <input class="login__field--value"
-               type="email"
+        <input type="email"
                #loginNameVariable=ngModel
                required
                name="loginName"
@@ -15,7 +15,7 @@
                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                [(ngModel)]="loginName">
         <div *ngIf="loginNameVariable.errors && (loginNameVariable.dirty || loginNameVariable.touched)"
-             class="login__errors">
+             class="auth__errors">
           <div [hidden]="!loginNameVariable.errors.required">
             Email Address is required
           </div>
@@ -24,10 +24,9 @@
           </div>
         </div>
       </div>
-      <div class="login__field">
+      <div class="auth__field">
         <label for="passwordFld">Password</label>
-        <input class="login__field--value"
-               type="password"
+        <input type="password"
                minlength="8"
                required
                placeholder="********"
@@ -38,7 +37,7 @@
                pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
                [(ngModel)]="loginPass">
         <div *ngIf="passwordVariable.errors && (passwordVariable.dirty || passwordVariable.touched)"
-             class="login__errors">
+             class="auth__errors">
           <div [hidden]="!passwordVariable.errors.required">
             Invalid password
           </div>
@@ -50,15 +49,15 @@
           </div>
         </div>
       </div>
-      <div class="login__buttons">
-        <button class="login__field--submit" type="submit" [disabled]="!formVariable.valid" (click)="onLogin()"> Log In
+      <div class="auth__buttons">
+        <button class="auth__field--submit" type="submit" [disabled]="!formVariable.valid" (click)="onLogin()"> Log In
         </button>
-        <button class="forgot__password" type="submit"> Forgot Password?</button>
+        <button class="forgot__password" type="submit" (click)="onForgotPassword()"> Forgot Password?</button>
       </div>
     </div>
   </form>
-  <div class="register__action">
-    <div class="register__action--info">Don't have an account?</div>
+  <div class="auth__action">
+    <div class="auth__action--info">Don't have an account?</div>
     <button (click)="onRegister()">Register</button>
   </div>
 </div>
