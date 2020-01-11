@@ -16,6 +16,7 @@ import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ClientFormComponent } from './pages/client-form/client-form.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ClientFormComponent } from './pages/client-form/client-form.component';
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
-    ClientFormComponent
+    ClientFormComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
