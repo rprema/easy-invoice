@@ -1,0 +1,19 @@
+.dashboard__grid {
+  background: #fff;
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  color: var(--primary-color);
+  border-radius: var(--border-radius);
+
+  .dashboard__grid--label {
+    text-transform: uppercase;
+    font-weight: var(--font-weight-medium);
+    font-size: 12px;
+  }
+
+  .dashboard__grid--value {
+    margin-top: 15px;
+    font-weight: var(--font-weight-semi-bold);
+    font-size: 22px;
+  }
+}

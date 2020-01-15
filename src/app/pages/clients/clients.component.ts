@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-
-import clients from '../../clients';
+import {AppService} from '../../services/app/app.service';
 
 @Component({
   selector: 'app-clients',
@@ -9,21 +8,21 @@ import clients from '../../clients';
   styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
- clients: any;
+  clients: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private appService: AppService) {
   }
 
   ngOnInit() {
-
-    this.clients = clients;
-    console.log(`clients: `, clients);
+    this.clients = this.appService.getAllClients();
+    console.log(`clients: `, this.clients);
   }
 
-  onAddClient(){
-    this.router.navigateByUrl('client-form');
+  onAddClient() {
+    this.router.navigate(['clients', 'new']);
   }
-  onNavigateToClient(){
-    this.router.navigateByUrl('client-form');
-    }
+
+  onNavigateToClient(item) {
+    this.router.navigate(['clients', item.id]);
+  }
 }

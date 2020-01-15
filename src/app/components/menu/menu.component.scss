@@ -3,7 +3,7 @@
   display: block;
   border: 0;
   line-height: 1;
-  margin: 30px 15px;
+  margin: 20px 30px;
 
   .sidebar-nav__item {
     display: flex;
@@ -11,31 +11,30 @@
 
     a {
       width: 100%;
-      padding: 10px 16px;
-      color: #fff;
+      padding: 8px 20px;
+      color: #666;
       font-size: 15px;
       text-decoration: none;
       display: flex;
-      font-weight: 600;
+      font-weight: bold;
       align-items: center;
-      -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-      border-radius: 6px;
-      letter-spacing: 0.5px;
+      border-radius: 20px;
+      //letter-spacing: 0.5px;
 
       svg {
-        fill: #a8b3c7;
+        fill: #666;
         margin: 0 16px 0 0;
       }
 
       &.active,
       &:hover,
       &:active {
-        background-color: #2e3748;
+        color: var(--primary-color);
+        background-color: #f9f6fe;
         cursor: pointer;
 
         svg {
-          fill: #fff;
+          fill: var(--primary-color);
         }
       }
 

@@ -5,56 +5,60 @@
     <h4>Create Account</h4>
     <div class="auth__fields">
       <div class="auth__field">
-        <label for="registerEmailFld">Email Address</label>
-        <input type="email"
-               #registerNameVariable=ngModel
-               required
-               placeholder="email@domain.com"
-               name="registerEmail"
-               id="registerEmailFld"
-               autocomplete="off"
-               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-               [(ngModel)]="registerEmail">
+        <div class="form__field is-required">
+          <label for="registerEmailFld">Email Address</label>
+          <input type="email"
+                 #registerNameVariable=ngModel
+                 required
+                 placeholder="email@domain.com"
+                 name="registerEmail"
+                 id="registerEmailFld"
+                 autocomplete="off"
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                 [(ngModel)]="registerEmail">
 
-        <div *ngIf="registerNameVariable.errors && (registerNameVariable.dirty || registerNameVariable.touched)"
-             class="auth__errors">
-          <div [hidden]="!registerNameVariable.errors.required">
-            Email Address is required
-          </div>
-          <div [hidden]="!registerNameVariable.errors.pattern">
-            Invalid email address
+          <div *ngIf="registerNameVariable.errors && (registerNameVariable.dirty || registerNameVariable.touched)"
+               class="field__errors auth__errors">
+            <div [hidden]="!registerNameVariable.errors.required">
+              Email Address is required
+            </div>
+            <div [hidden]="!registerNameVariable.errors.pattern">
+              Invalid email address
+            </div>
           </div>
         </div>
       </div>
       <div class="auth__field">
-        <label for="registerPasswordFld">Password</label>
-        <input type="password"
-               minlength="8"
-               required
-               placeholder="********"
-               autocomplete="off"
-               #registerPasswordVariable=ngModel
-               name="registerPassword"
-               id="registerPasswordFld"
-               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-               [(ngModel)]="registerPass">
+        <div class="form__field is-required">
+          <label for="registerPasswordFld">Password</label>
+          <input type="password"
+                 minlength="8"
+                 required
+                 placeholder="********"
+                 autocomplete="off"
+                 #registerPasswordVariable=ngModel
+                 name="registerPassword"
+                 id="registerPasswordFld"
+                 pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                 [(ngModel)]="registerPass">
 
-        <div
-          *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
-          class="auth__errors">
-          <div [hidden]="!registerPasswordVariable.errors.required">
-            Invalid password
-          </div>
-          <div [hidden]="!registerPasswordVariable.errors.minlength">
-            Password should be of minimum 8 characters
-          </div>
-          <div [hidden]="!registerPasswordVariable.errors.pattern">
-            Password must contain at least one letter, one number and one special character
+          <div
+            *ngIf="registerPasswordVariable.invalid && (registerPasswordVariable.dirty || registerPasswordVariable.touched)"
+            class="field__errors auth__errors">
+            <div [hidden]="!registerPasswordVariable.errors.required">
+              Invalid password
+            </div>
+            <div [hidden]="!registerPasswordVariable.errors.minlength">
+              Password should be of minimum 8 characters
+            </div>
+            <div [hidden]="!registerPasswordVariable.errors.pattern">
+              Password must contain at least one letter, one number and one special character
+            </div>
           </div>
         </div>
       </div>
       <div class="auth__buttons">
-        <button class="auth__field--submit" type="submit" [disabled]="!registerFormVariable.valid"> Register</button>
+        <button class="auth__field--btn btn" type="submit" [disabled]="!registerFormVariable.valid"> Register</button>
       </div>
     </div>
   </form>

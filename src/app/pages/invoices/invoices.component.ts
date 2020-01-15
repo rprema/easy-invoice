@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-
-import invoices from '../../invoices';
+import {AppService} from '../../services/app/app.service';
 
 @Component({
   selector: 'app-invoices',
@@ -11,31 +10,34 @@ import invoices from '../../invoices';
 export class InvoicesComponent implements OnInit {
 
   invoices: any;
+  currentFilter: any = 'ALL';
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private appService: AppService
+  ) {
   }
 
   ngOnInit() {
-    this.invoices = invoices;
-    console.log(`invoices: `, invoices);
+    this.getInvoices();
+  }
+
+  async getInvoices() {
+    try {
+      this.invoices = await this.appService.getAllInvoices();
+    } catch (err) {
+      console.log(err);
+    }
+    console.log(`invoices: `, this.invoices);
   }
 
 
   onAddInvoice() {
-    this.router.navigateByUrl('invoice-form');
+    this.router.navigate(['invoices', 'new']);
   }
 
-  onNavigateToInvoice() {
-    this.router.navigateByUrl('invoice-form');
-  }
-
-  getClientName(item) {
-    let clientId = item.clientId || '';
-
-    if (clientId) {
-      return 'Client Name';
-    }
-
+  onNavigateToInvoice(item) {
+    this.router.navigate(['invoices', item.id]);
   }
 
   getInvoiceAmount(item) {
@@ -46,6 +48,15 @@ export class InvoicesComponent implements OnInit {
     });
 
     return amount;
+  }
+
+  onUpdateFilter(statusId) {
+    this.currentFilter = statusId;
+    this.getInvoices().then(() => {
+      if (statusId !== 'ALL') {
+        this.invoices = this.invoices.filter((item) => item.invoiceStatus === statusId);
+      }
+    });
   }
 
 

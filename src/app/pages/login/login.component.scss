@@ -4,12 +4,5 @@
 
 .forgot__password {
   color: var(--primary-color);
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-decoration: none;
-  background-color: transparent;
-  border: 0 solid #e2e8f0;
-  line-height: 1.625;
-  cursor: pointer;
-  padding-top: 8px;
+  font-weight: var(--font-weight-semi-bold);
 }

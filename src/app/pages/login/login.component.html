@@ -4,55 +4,60 @@
     <h4>Welcome to EasyInvoice</h4>
     <div class="auth__fields">
       <div class="auth__field">
-        <label for="loginNameFld">Email Address</label>
-        <input type="email"
-               #loginNameVariable=ngModel
-               required
-               name="loginName"
-               id="loginNameFld"
-               placeholder="email@domail.com"
-               autocomplete="off"
-               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-               [(ngModel)]="loginName">
-        <div *ngIf="loginNameVariable.errors && (loginNameVariable.dirty || loginNameVariable.touched)"
-             class="auth__errors">
-          <div [hidden]="!loginNameVariable.errors.required">
-            Email Address is required
-          </div>
-          <div [hidden]="!loginNameVariable.errors.pattern">
-            Invalid email address
+        <div class="form__field is-required">
+          <label for="loginNameFld">Email Address</label>
+          <input type="email"
+                 #loginNameVariable=ngModel
+                 required
+                 name="loginName"
+                 id="loginNameFld"
+                 placeholder="email@domail.com"
+                 autocomplete="off"
+                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                 [(ngModel)]="loginName">
+          <div *ngIf="loginNameVariable.errors && (loginNameVariable.dirty || loginNameVariable.touched)"
+               class="field__errors auth__errors">
+            <div [hidden]="!loginNameVariable.errors.required">
+              Email Address is required
+            </div>
+            <div [hidden]="!loginNameVariable.errors.pattern">
+              Invalid email address
+            </div>
           </div>
         </div>
       </div>
       <div class="auth__field">
-        <label for="passwordFld">Password</label>
-        <input type="password"
-               minlength="8"
-               required
-               placeholder="********"
-               autocomplete="off"
-               #passwordVariable=ngModel
-               name="password"
-               id="passwordFld"
-               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-               [(ngModel)]="loginPass">
-        <div *ngIf="passwordVariable.errors && (passwordVariable.dirty || passwordVariable.touched)"
-             class="auth__errors">
-          <div [hidden]="!passwordVariable.errors.required">
-            Invalid password
-          </div>
-          <div [hidden]="!passwordVariable.errors.minlength">
-            Password should be of minimum 8 characters
-          </div>
-          <div [hidden]="!passwordVariable.errors.pattern">
-            Password must contain at least one letter, one number and one special character
+        <div class="form__field is-required">
+          <label for="passwordFld">Password</label>
+          <input type="password"
+                 minlength="8"
+                 required
+                 placeholder="********"
+                 autocomplete="off"
+                 #passwordVariable=ngModel
+                 name="password"
+                 id="passwordFld"
+                 pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                 [(ngModel)]="loginPass">
+          <div *ngIf="passwordVariable.errors && (passwordVariable.dirty || passwordVariable.touched)"
+               class="field__errors auth__errors">
+            <div [hidden]="!passwordVariable.errors.required">
+              Invalid password
+            </div>
+            <div [hidden]="!passwordVariable.errors.minlength">
+              Password should be of minimum 8 characters
+            </div>
+            <div [hidden]="!passwordVariable.errors.pattern">
+              Password must contain at least one letter, one number and one special character
+            </div>
           </div>
         </div>
       </div>
       <div class="auth__buttons">
-        <button class="auth__field--submit" type="submit" [disabled]="!formVariable.valid" (click)="onLogin()"> Log In
+        <button class="auth__field--btn btn" type="submit" [disabled]="!formVariable.valid" (click)="onLogin()"> Log
+          In
         </button>
-        <button class="forgot__password" type="submit" (click)="onForgotPassword()"> Forgot Password?</button>
+        <button class="forgot__password btn-clear" type="submit" (click)="onForgotPassword()"> Forgot Password?</button>
       </div>
     </div>
   </form>

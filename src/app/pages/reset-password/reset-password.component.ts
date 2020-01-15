@@ -17,7 +17,7 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   onSubmit(formData) {
-    console.log(`formData`);
+    console.log(`formData`, formData);
   }
 
   onLogin() {

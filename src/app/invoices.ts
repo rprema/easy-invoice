@@ -1,7 +1,7 @@
 let invoices = [{
   id: 50,
   invoiceNumber: 100,
-  invoiceStatus: null,
+  invoiceStatus: 'PAID',
   invoiceDate: '10/8/2019',
   dueDate: '4/6/2017',
   invoiceName: 'Miller, Sanford and Schulist',
@@ -27,7 +27,7 @@ let invoices = [{
 }, {
   id: 59,
   invoiceNumber: 93,
-  invoiceStatus: null,
+  invoiceStatus: 'DRAFT',
   invoiceDate: '8/22/2018',
   dueDate: '3/18/2017',
   invoiceName: 'Stokes-Schroeder',
@@ -73,7 +73,7 @@ let invoices = [{
 }, {
   id: 2,
   invoiceNumber: 56,
-  invoiceStatus: null,
+  invoiceStatus: 'PENDING',
   invoiceDate: '8/14/2016',
   dueDate: '12/26/2018',
   invoiceName: 'Ryan-Pfeffer',
@@ -99,7 +99,7 @@ let invoices = [{
 }, {
   id: 28,
   invoiceNumber: 4,
-  invoiceStatus: null,
+  invoiceStatus: 'OVERDUE',
   invoiceDate: '9/13/2019',
   dueDate: '12/14/2016',
   invoiceName: 'Smith-Schmeler',
@@ -130,7 +130,7 @@ let invoices = [{
 }, {
   id: 35,
   invoiceNumber: 75,
-  invoiceStatus: null,
+  invoiceStatus: 'PENDING',
   invoiceDate: '4/30/2017',
   dueDate: '3/15/2016',
   invoiceName: 'Hartmann, Grimes and Bechtelar',
@@ -161,7 +161,7 @@ let invoices = [{
 }, {
   id: 9,
   invoiceNumber: 90,
-  invoiceStatus: null,
+  invoiceStatus: 'PAID',
   invoiceDate: '10/7/2018',
   dueDate: '8/26/2016',
   invoiceName: 'Greenholt-Langworth',
@@ -207,7 +207,7 @@ let invoices = [{
 }, {
   id: 71,
   invoiceNumber: 38,
-  invoiceStatus: null,
+  invoiceStatus: 'OVERDUE',
   invoiceDate: '5/16/2016',
   dueDate: '10/3/2016',
   invoiceName: 'Mitchell-Daugherty',
@@ -253,7 +253,7 @@ let invoices = [{
 }, {
   id: 70,
   invoiceNumber: 1,
-  invoiceStatus: null,
+  invoiceStatus: 'DRAFT',
   invoiceDate: '6/14/2017',
   dueDate: '10/5/2017',
   invoiceName: 'Rath Group',
@@ -289,7 +289,7 @@ let invoices = [{
 }, {
   id: 46,
   invoiceNumber: 71,
-  invoiceStatus: null,
+  invoiceStatus: 'PAID',
   invoiceDate: '3/25/2017',
   dueDate: '7/16/2017',
   invoiceName: 'Kessler LLC',
@@ -315,7 +315,7 @@ let invoices = [{
 }, {
   id: 50,
   invoiceNumber: 31,
-  invoiceStatus: null,
+  invoiceStatus: 'PENDING',
   invoiceDate: '10/11/2017',
   dueDate: '8/18/2016',
   invoiceName: 'Hahn and Sons',

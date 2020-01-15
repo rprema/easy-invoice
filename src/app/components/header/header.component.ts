@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,7 +8,10 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  isMenuActive = false;
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
@@ -16,6 +19,10 @@ export class HeaderComponent implements OnInit {
   onLogout() {
     console.log('Logout button clicked!');
     this.router.navigateByUrl('login');
+  }
+
+  onToggleMenu() {
+    this.isMenuActive = !this.isMenuActive;
   }
 
 }

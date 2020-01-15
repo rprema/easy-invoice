@@ -24,7 +24,7 @@ const routes: Routes = [
     component: InvoicesComponent
   },
   {
-    path: 'invoice-form',
+    path: 'invoices/:itemId',
     component: InvoiceFormComponent
   },
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     component: ClientsComponent
   },
   {
-    path: 'client-form',
+    path: 'clients/:itemId',
     component: ClientFormComponent
   },
   {

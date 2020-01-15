@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container invoice-form-page">
   <div class="sidebar-container">
     <div class="header-logo">
       <app-logo></app-logo>
@@ -8,127 +8,238 @@
   <main class="main-container">
     <app-header></app-header>
     <div class="main-content">
-
-      <div class="invoice-form-page">
-
-        <div class="main__invoice">
-
-          <div class="action__section">
-            <button class="btn action__section--save" (click)="onClickSave()">Save</button>
-            <button class="btn action__section--preview" (click)="onClickPreview()">Preview</button>
-            <button class="btn action__section--send" (click)="onClickSend()">Send Invoice</button>
-
-          </div>
-          <form (ngSubmit)="onSubmitForm(invoiceForm)" #invoiceForm="ngForm">
-
-            <div class="main__invoice--header">
-              <div class="main__invoice--header-item">
-                <label class="main__invoice--header-item-label">Invoice # </label>
-                <input class="main__invoice--header-item-input" type="text" name="invoiceNumber"
-                       [(ngModel)]="invoiceData.invoiceNumber">
-              </div>
-              <div class="main__invoice--header-item">
-                <label class="main__invoice--header-item-label">Date Issued: </label>
-                <input class="main__invoice--header-item-input" type="text" name="dateIssued"
-                       [(ngModel)]="invoiceData.dateIssued">
-              </div>
-              <div class="main__invoice--header-item">
-                <label class="main__invoice--header-item-label">Date Due: </label>
-                <input class="main__invoice--header-item-input" type="text" name="dueDate"
-                       [(ngModel)]="invoiceData.dueData">
-              </div>
-
-            </div>
-            <div class="main__invoice--title">
-              <div class="main__invoice--title-description">
-                <label class="main__invoice--title-description-label">Invoice </label>
-                <input class="main__invoice--title-description-input" type="text" name="invoiceDetail"
-                       [(ngModel)]="invoiceData.invoiceDetail">
-              </div>
-              {{invoiceData.invoiceDetail}}
-              <div class="main__invoice--title-description">
-                <label class="main__invoice--title-description-logo">Invoice Logo</label>
-              </div>
-
-            </div>
-            <div class="main__invoice--bill">
-              <div class="main__invoice--bill-from">Bill From</div>
-              <div class="main__invoice--bill-to">Bill To</div>
-            </div>
-
-            <div class="main__invoice--items">
-
-
-              <!--          <div class="main__invoice&#45;&#45;item" *ngFor="let item in invoiceItems; let idx = index">-->
-              <!--            <div class="main__invoice&#45;&#45;field">-->
-              <!--              Item-->
-              <!--              <input placeholder="Item Name" type="text" [(ngModel)]="invoiceData.invoiceItems[idx].itemName">-->
-              <!--            </div>-->
-              <!--            <div class="main__invoice&#45;&#45;field">-->
-              <!--              Cost-->
-              <!--              <input value="" placeholder="0.00" type="text">-->
-              <!--            </div>-->
-              <!--            <div class="main__invoice&#45;&#45;field">-->
-              <!--              Qty-->
-              <!--              <input value="" placeholder="Qty" type="text">-->
-              <!--            </div>-->
-              <!--            <div class="main__invoice&#45;&#45;field">-->
-              <!--              Price-->
-              <!--              <div class="price"></div>-->
-              <!--            </div>-->
-              <!--          </div>-->
-            </div>
-            <div class="main__invoice--item-button">
-              <button class="main__invoice--item-button-input">Item</button>
-            </div>
-            <div class="main__invoice--amount">
-              <div>
-
-              </div>
-              <div class="main__invoice--amount-sum">
-                <div class="main__invoice--amount-sum-subtotal">
-                  <div class="sum-subtotal">
-                    <span class="sum-subtotal-name">Subtotal</span>
-                  </div>
-                  <div class="sum-subtotal">
-                    <span class="sum-subtotal-value">$0.00</span>
-                  </div>
-                  <div class="sum-subtotal">
-                    <span class="sum-subtotal-name">Discount</span>
-                  </div>
-                  <div class="sum-subtotal">
-                    <span class="sum-subtotal-value">$0.00</span>
-                  </div>
-
-                </div>
-                <div class="main__invoice--amount-sum-total">
-                  <div class="sum-total">
-                    <span class="sum-total-name">Invoice Total</span>
-                  </div>
-                  <div class="sum-total">
-                    <span class="sum-total-value">$0.00</span>
-                  </div>
-                  <div class="sum-total">
-                    <span class="sum-total-name">Paid to date</span>
-                  </div>
-                  <div class="sum-total">
-                    <span class="sum-total-value">$0.00</span>
-                  </div>
-                  <div class="sum-total">
-                    <span class="sum-total-name">Balance(USD)</span>
-                  </div>
-                  <div class="sum-total">
-                    <span class="sum-total-value">$0.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-          </form>
+      <div class="main-content__heading">
+        <h1>
+          <button type="button" class="btn-clear btn-in-heading" (click)="onNavigateInvoices()">Invoices</button>
+          <span>{{ isNew ? 'New Invoice' : invoiceData.invoiceName }}</span>
+        </h1>
+        <div class="main-content__heading--buttons">
+          <button class="btn action__section--save" (click)="onClickSave()">Save</button>
+          <button class="btn action__section--send" (click)="onClickDelete()">Delete</button>
         </div>
-
       </div>
+
+      <div class="invoice__form">
+        <form #invoiceForm="ngForm">
+          <div class="invoice__form--header">
+            <div class="invoice__form--header--left">
+              <div class="invoice__form--header--field">
+                <div class="invoice__form--header--logo">
+
+                </div>
+              </div>
+              <div class="invoice__form--header--field">
+                <div class="form__field is-required">
+                  <label for="invoiceDetailFld">Invoice Name</label>
+                  <input type="text"
+                         name="invoiceDetail"
+                         id="invoiceDetailFld"
+                         #invoiceDetailVariable="ngModel"
+                         placeholder="Invoice Name"
+                         required
+                         [(ngModel)]="invoiceData.invoiceName">
+                  <div
+                    *ngIf="invoiceDetailVariable.errors && (invoiceDetailVariable.dirty || invoiceDetailVariable.touched)"
+                    class="field__errors invoice__errors">
+                    <div [hidden]="!invoiceDetailVariable.errors.required">
+                      Invoice description is required
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="invoice__form--header--right">
+              <div class="invoice__form--info--field">
+                <div class="form__field is-required">
+                  <label for="invoiceNumberFld">Invoice #</label>
+                  <input type="text"
+                         name="invoiceNumber"
+                         id="invoiceNumberFld"
+                         #invoiceNumberVariable="ngModel"
+                         placeholder="123"
+                         required
+                         [(ngModel)]="invoiceData.invoiceNumber">
+                  <div
+                    *ngIf="invoiceNumberVariable.errors && (invoiceNumberVariable.dirty || invoiceNumberVariable.touched)"
+                    class="field__errors invoice__errors">
+                    <div [hidden]="!invoiceNumberVariable.errors.required">
+                      Invoice Number is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="invoice__form--info--field">
+                <div class="form__field is-required">
+                  <label for="dateIssuedFld">Issued Date</label>
+                  <input type="text"
+                         name="dateIssued"
+                         id="dateIssuedFld"
+                         #dateIssuedVariable="ngModel"
+                         placeholder="12/31/2019"
+                         required
+                         [(ngModel)]="invoiceData.invoiceDate">
+
+                  <div *ngIf="dateIssuedVariable.errors && (dateIssuedVariable.dirty || dateIssuedVariable.touched)"
+                       class="field__errors invoice__errors">
+                    <div [hidden]="!dateIssuedVariable.errors.required">
+                      Issued date is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="invoice__form--info--field">
+                <div class="form__field is-required">
+                  <label for="dueDateFld">Due Date</label>
+                  <input type="text"
+                         name="dueDate"
+                         id="dueDateFld"
+                         #dueDateVariable="ngModel"
+                         required
+                         placeholder="1/10/2020"
+                         [(ngModel)]="invoiceData.dueDate">
+                  <div *ngIf="dueDateVariable.errors && (dueDateVariable.dirty || dueDateVariable.touched)"
+                       class="field__errors invoice__errors">
+                    <div [hidden]="!dueDateVariable.errors.required">
+                      Issued date is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="invoice__form--billing">
+            <div class="invoice__form--billing--from">Bill From</div>
+            <div class="invoice__form--billing--to">Bill To</div>
+          </div>
+          <div class="invoice__form--items">
+            <div class="invoice__form--item" *ngFor="let item of invoiceData.invoiceItems; let idx = index">
+              <div class="invoice__form--item--field">
+                <div class="form__field is-required">
+                  <label for="invoiceItems--itemName--{{idx}}">Item</label>
+                  <input placeholder="Item Name"
+                         type="text"
+                         id="invoiceItems--itemName--{{idx}}"
+                         required
+                         #itemNameVariable="ngModel"
+                         [(ngModel)]="item.itemName"
+                         name="invoiceItems--itemName--{{idx}}">
+
+                  <div *ngIf="itemNameVariable.errors && (itemNameVariable.dirty || itemNameVariable.touched)"
+                       class="field__errors invoice__errors">
+                    <div [hidden]="!itemNameVariable.errors.required">
+                      Item Name is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="invoice__form--item--field invoice__form--item--field-small">
+                <div class="form__field is-required">
+                  <label for="invoiceItems--cost--{{idx}}">Cost</label>
+                  <input value=""
+                         placeholder="0.00"
+                         type="text"
+                         id="invoiceItems--cost--{{idx}}"
+                         required
+                         #costVariable="ngModel"
+                         [(ngModel)]="item.cost"
+                         name="invoiceItems--cost--{{idx}}">
+                  <div *ngIf="costVariable.errors && (costVariable.dirty || costVariable.touched)"
+                       class="field__errors invoice__errors">
+                    <div [hidden]="!costVariable.errors.required">
+                      Cost is required
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="invoice__form--item--field invoice__form--item--field-small">
+                <div class="form__field is-required">
+                  <label for="invoiceItems--quantity--{{idx}}">Qty</label>
+                  <input value=""
+                         placeholder="Qty"
+                         type="text"
+                         id="invoiceItems--quantity--{{idx}}"
+                         required
+                         #qtyVariable="ngModel"
+                         [(ngModel)]="item.quantity"
+                         name="invoiceItems--quantity--{{idx}}">
+                  <div *ngIf="qtyVariable.errors && (qtyVariable.dirty || qtyVariable.touched)"
+                       class="field__errors invoice__errors">
+                    <div [hidden]="!qtyVariable.errors.required">
+                      Qty is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="main__invoice--field">
+                Price
+                <div class="price"></div>
+              </div>
+              <div class="main__invoice--field">
+                <label>Delete</label>
+                <button type="button" (click)="onDeleteInvoiceItem(idx)">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div class="invoice__form--item-button">
+            <button type="button" class="btn" (click)="onAddInvoiceItem()">Add Item
+            </button>
+          </div>
+          <div class="invoice__form--summary">
+            <div>
+            </div>
+            <div class="main__invoice--amount-sum">
+              <div class="main__invoice--amount-sum-subtotal">
+                <div class="summary">
+                  <div class="summary__label">
+                    Subtotal
+                  </div>
+                  <div class="summary__value">
+                    $0.00
+                  </div>
+                </div>
+                <div class="summary">
+                  <div class="summary__label">
+                    Discount
+                  </div>
+                  <div class="summary__value">
+                    $0.00
+                  </div>
+                </div>
+              </div>
+              <div class="main__invoice--amount-sum-total">
+                <div class="summary">
+                  <div class="summary__label">
+                    Invoice Total
+                  </div>
+                  <div class="summary__value">
+                    $0.00
+                  </div>
+                </div>
+                <div class="summary">
+                  <div class="summary__label">
+                    Paid to date
+                  </div>
+                  <div class="summary__value">
+                    $0.00
+                  </div>
+                </div>
+                <div class="summary">
+                  <div class="summary__label">
+                    Balance(USD)
+                  </div>
+                  <div class="summary__value">
+                    $0.00
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
     </div>
   </main>
 </div>
